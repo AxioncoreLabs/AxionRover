@@ -53,3 +53,21 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Arduino / editor
+sketchbook/**/build/
+.pio/
+.vscode/
+.idea/
+*.bak
+
+# Video stays off git
+*.mp4
+*.mov
+*.mkv
+*.avi
