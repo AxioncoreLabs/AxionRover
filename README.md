@@ -23,6 +23,14 @@
 - 转角：`r ±90` / `r ±180`（编码器停角, 实测几乎无偏差）
 - 轨距 `L = 0.159 m`（外边距 185 mm − 轮宽 26 mm）
 
+## 阶段二
+
+- 车载：Raspberry Pi 5 8GB，Ubuntu Server 24.04，ROS 2 **Jazzy**（`ros-base`，无桌面）
+- `/cmd_vel`（`linear.x` / `angular.z`）→ 串口 `c <v> <w>`，固件仍是 `DiffDrive` 速度环；空格停车
+- 节点：[ros2/axion_serial_bridge](ros2/axion_serial_bridge)；Windows 不装 ROS，用 [tools/serial_teleop.py](tools/serial_teleop.py)
+- 电源：主开关 ON、VIN 断开，派 USB 接 ESP32；丢包约 2 s 超时停
+- 不是激光、建图、Nav2。步骤见 [book/zh/200-ROS2接入.md](book/zh/200-ROS2接入.md)
+
 ## 演示
 
 - A 路开环：[YouTube](https://www.youtube.com/shorts/FS3IdpszdbM) · [Bilibili](https://www.bilibili.com/video/BV1PCHp6ZEFa/)

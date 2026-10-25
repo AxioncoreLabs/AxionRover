@@ -11,17 +11,25 @@ Two-wheel differential rover: ESP32, TB6612, wheel encoders. Velocity commands p
 
 [book/zh/00-目录.md](book/zh/00-目录.md) (**00** = table of contents)
 
-- **10x Phase 1** (current): 101 flash → 106 vehicle test
+- **10x Phase 1**: 101 flash → 106 vehicle test
 - **20x Phase 2**: ROS 2 `/cmd_vel` serial bridge (Pi 5 + Jazzy)
 - **30x Phase 3**: navigation (stub 300)
 
 English map: [book/en/00-contents.md](book/en/00-contents.md)
 
-## Status (Phase 1)
+## Phase 1
 
 - Straight: `d 0.96` ≈ 1 m (open-loop, negligible lateral error when squared up)
 - Turn: `r ±90` / `r ±180` (encoder stop, negligible error on the floor tape)
 - Track `L = 0.159 m` (outer 185 mm − wheel width 26 mm)
+
+## Phase 2
+
+- Onboard: Raspberry Pi 5 8GB, Ubuntu Server 24.04, ROS 2 **Jazzy** (`ros-base`, no desktop)
+- `/cmd_vel` (`linear.x` / `angular.z`) → serial `c <v> <w>` on the same `DiffDrive` speed loop; spacebar stops
+- Node: [ros2/axion_serial_bridge](ros2/axion_serial_bridge). No ROS on Windows; use [tools/serial_teleop.py](tools/serial_teleop.py)
+- Power: main switch ON, VIN disconnected, Pi USB to ESP32; ~2 s command timeout
+- Not lidar, mapping, or Nav2. Lab log (Chinese): [book/zh/200-ROS2接入.md](book/zh/200-ROS2接入.md)
 
 ## Demos
 
@@ -40,6 +48,8 @@ Xiaohongshu / WeChat carry the same clips. This repo links YouTube and Bilibili 
 book/zh/          operations manual (00, 10x / 20x / 30x)
 book/en/          English table of contents
 sketchbook/       Arduino sketches (folder name = .ino name)
+tools/            Windows serial teleop (before Pi, not ROS)
+ros2/             Jazzy: cmd_vel → DiffDrive serial (build on the Pi)
 images/           photos named 101-01.jpg, matching chapter ids
 ```
 
