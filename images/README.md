@@ -10,5 +10,6 @@
 | `104-` | 电源定型 |
 | `105-` | PI / DiffDrive |
 | `106-` | 样车验证（装车图、清单图） |
+| `200-` | ROS 接入（三路电源、Imager、Jazzy、验收） |
 
 From `book/zh/` use `../../images/102-01.png`. No Chinese or spaces in filenames.

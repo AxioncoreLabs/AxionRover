@@ -20,11 +20,11 @@ Chinese: [book/zh/00-目录.md](../zh/00-目录.md)
 | [105](../zh/105-速度PI与差速.md) | CPR, speed PI, DiffDrive | `EncoderCal`, `SpeedPI_*`, `DiffDrive` |
 | [106](../zh/106-样车验证.md) | 1.6 chassis, photos, 1 m, yaw | `DiffDrive` `d` / `r` |
 
-## Phase 2 · ROS (20x) · not started
+## Phase 2 · ROS (20x) · done
 
 | ID | Topic |
 |----|--------|
-| [200](../zh/200-ROS接入.md) | ROS 2 + `cmd_vel` (stub). Later: 201, … |
+| [200](../zh/200-ROS2接入.md) | Pi 5 + Jazzy, `/cmd_vel` → serial `c v w` |
 
 ## Phase 3 · Navigation (30x) · not started
 

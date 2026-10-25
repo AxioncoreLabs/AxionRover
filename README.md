@@ -5,17 +5,17 @@
 
 # AxionRover
 
-个人两轮差速小车：ESP32 + TB6612 + 编码器。开环速度，编码器直行 `d`、转角 `r`。对应 ROS `/cmd_vel` 的 v–ω。**不是** SLAM / Nav2 自研；阶段二才对接 ROS 2 串口，阶段三才谈导航。
+个人两轮差速小车: ESP32 + TB6612 + 编码器。开环速度, 编码器直行 `d`、转角 `r`。对应ROS`/cmd_vel`的 v–ω。**不是**SLAM/Nav2自研; 阶段二已对接ROS2串口。
 
 ## 操作手册
 
-[book/zh/00-目录.md](book/zh/00-目录.md)（**00** = 总目录）
+[book/zh/00-目录.md](book/zh/00-目录.md)
 
-- **10x 阶段一**：101 烧录 → 106 样车验证  
-- **20x 阶段二**：ROS 接入（未开始）
-- **30x 阶段三**：导航（未开始）
+- **10x 阶段一**: 101烧录 → 106样车验证  
+- **20x 阶段二**: ROS2接入(Pi 5 + Jazzy, `/cmd_vel`串口桥, 见`ros2/`)
+- **30x 阶段三**: 导航(未开始)
 
-英文目录：[book/en/00-contents.md](book/en/00-contents.md)
+英文目录: [book/en/00-contents.md](book/en/00-contents.md)
 
 ## 阶段一
 
@@ -30,6 +30,7 @@
 - AB 双路：[YouTube](https://www.youtube.com/shorts/fDkDXerzhRc) · [Bilibili](https://www.bilibili.com/video/BV1PkHp6bE5H/)
 - 直行约 1 m：[YouTube](https://youtu.be/OrOgSyiR2sc) · [Bilibili](https://www.bilibili.com/video/BV1LJHp65Eb5/)
 - 原地 90° / 180°：[YouTube](https://youtu.be/yye5On57KsE) · [Bilibili](https://www.bilibili.com/video/BV1o7Hp61EPy/)
+- ROS 2 `/cmd_vel` 键盘遥控：[YouTube](https://www.youtube.com/shorts/JJ2JFrDMi3Q) · [Bilibili](https://www.bilibili.com/video/BV1NEHg64Ecr/)
 
 ## 仓库结构
 
@@ -37,6 +38,8 @@
 book/zh/          操作手册（00 目录，10x / 20x / 30x）
 book/en/          英文目录
 sketchbook/       Arduino 工程（文件夹名 = .ino 名）
+tools/            Windows 串口遥控（Pi 前，非 ROS）
+ros2/             Jazzy：cmd_vel → DiffDrive 串口（派上编译）
 images/           配图(101-01.png与章节编号一致)
 ```
 
